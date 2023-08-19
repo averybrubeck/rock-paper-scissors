@@ -11,6 +11,9 @@
 const rock = 'rock';
 const paper = 'paper';
 const scissors = 'scissors';
-const choices = [rock, paper, scissors];
+let choices = [rock, paper, scissors];
 
-console.log(choices);
+function computerChoice(){
+    return choices[Math.floor((Math.random() * 3))];
+}
+console.log(computerChoice());
