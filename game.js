@@ -18,9 +18,35 @@ let choices = [rock, paper, scissors];
 function computerChoice(){
     return choices[Math.floor((Math.random() * 3))];
 }
-console.log(computerChoice());
 
-function round() {
+
+
+function game(text) {
+    console.log('Welcome to the game');
+    window.prompt('Enter your choice');
+    console.log(computerChoice());
+    window.prompt('choose again');
+    console.log(computerChoice());
+    window.prompt('choose again');
+    console.log(computerChoice());
+    window.prompt('choose again');
+    console.log(computerChoice());
+    window.prompt('choose again');
+    console.log(computerChoice());
+}
+
+game();
+
+
+
+
+
+
+
+
+
+
+/* function round() {
     let computerSelection = computerChoice;
     let playerChoice = choices;
 
@@ -30,5 +56,5 @@ function round() {
         console.log('loser');
     }};
 
-    round();
+    round(); */ 
     
