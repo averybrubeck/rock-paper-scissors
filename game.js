@@ -15,56 +15,65 @@ const paper = 'paper';
 const scissors = 'scissors';
 let choices = [rock, paper, scissors];
 let winCount = 0;
-let looseCount = 0
+let looseCount = 0;
+let gameCount = 0;
 
 function computerChoice(){
     return choices[Math.floor((Math.random() * 3))];
 }
 
+function gameCheck(){
+    if (gameCount === 5 && winCount > looseCount) {
+        alert('You"re a super winner');
+    }else if (gameCount === 5 && looseCount > winCount) {
+        alert('the PC has taken over');
+    }
+    else;
+}
+
+function gameStart() {
+    alert('You are about to play RPS vs a PC, click ok to start or exit the browser to quit. Best of 5');
+}
+
 function round() {
-let sign = prompt("What's your choice?");
+let playerChoice = prompt("What's your choice?");
 
-if (computerChoice() === rock && sign === paper) {
-    console.log(computerChoice());
+if (computerChoice() === rock && playerChoice === paper) {
+   
     alert('winner');
     winCount++;
+    gameCount++;
   
-} else if(computerChoice() === scissors && sign === rock) {
-    console.log(computerChoice());
+} else if(computerChoice() === scissors && playerChoice === rock) {
+   
     alert('winner');
     winCount++;
-} else if(computerChoice() === paper && sign === scissors) {
-    console.log(computerChoice());
+    gameCount++;
+} else if(computerChoice() === paper && playerChoice === scissors) {
+   
     alert('winner');
     winCount++;
+    gameCount++;
 } else(
-    console.log(computerChoice(), 'you loose', looseCount++)  
-)}
+    looseCount++, gameCount++ && alert('The PC Won this time')
+)
 
+console.log(computerChoice());
+}
+
+function game(){
+gameStart();
 round();
-
-
-
-
-
-
-
-
-
-
- /* function game(text) {
-    console.log('Welcome to the game');
-    window.prompt('Enter your choice');
-    console.log(computerChoice());
-    window.prompt('choose again');
-    console.log(computerChoice());
-    window.prompt('choose again');
-    console.log(computerChoice());
-    window.prompt('choose again');
-    console.log(computerChoice());
-    window.prompt('choose again');
-    console.log(computerChoice());
+round();
+round();
+round();
+round();
+gameCheck();
 }
 
 game();
-*/
+
+
+
+
+
