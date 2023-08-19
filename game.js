@@ -1,3 +1,5 @@
+
+
 //initiate the game/start button or message
 //need an array for the rock paper siccors 
 //need to be able to compare the three
@@ -17,3 +19,16 @@ function computerChoice(){
     return choices[Math.floor((Math.random() * 3))];
 }
 console.log(computerChoice());
+
+function round() {
+    let computerSelection = computerChoice;
+    let playerChoice = choices;
+
+    if (playerChoice === rock && computerChoice === paper ) {
+        console.log('Win');
+    } else {
+        console.log('loser');
+    }};
+
+    round();
+    
