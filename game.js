@@ -14,14 +14,45 @@ const rock = 'rock';
 const paper = 'paper';
 const scissors = 'scissors';
 let choices = [rock, paper, scissors];
+let winCount = 0;
+let looseCount = 0
 
 function computerChoice(){
     return choices[Math.floor((Math.random() * 3))];
 }
 
+function round() {
+let sign = prompt("What's your choice?");
+
+if (computerChoice() === rock && sign === paper) {
+    console.log(computerChoice());
+    alert('winner');
+    winCount++;
+  
+} else if(computerChoice() === scissors && sign === rock) {
+    console.log(computerChoice());
+    alert('winner');
+    winCount++;
+} else if(computerChoice() === paper && sign === scissors) {
+    console.log(computerChoice());
+    alert('winner');
+    winCount++;
+} else(
+    console.log(computerChoice(), 'you loose', looseCount++)  
+)}
+
+round();
 
 
-function game(text) {
+
+
+
+
+
+
+
+
+ /* function game(text) {
     console.log('Welcome to the game');
     window.prompt('Enter your choice');
     console.log(computerChoice());
@@ -36,25 +67,4 @@ function game(text) {
 }
 
 game();
-
-
-
-
-
-
-
-
-
-
-/* function round() {
-    let computerSelection = computerChoice;
-    let playerChoice = choices;
-
-    if (playerChoice === rock && computerChoice === paper ) {
-        console.log('Win');
-    } else {
-        console.log('loser');
-    }};
-
-    round(); */ 
-    
+*/
