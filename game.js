@@ -9,10 +9,7 @@ let winCount = 0;
 let looseCount = 0;
 let gameCount = 0;
 
-//computer randomly chooses one one the strings
-function computerChoice(){
-    return choices[Math.floor((Math.random() * 3))];
-}
+
 //checks for 5 games played along with winners and looser
 function gameCheck(){
     if (gameCount === 5 && winCount > looseCount) {
@@ -22,10 +19,8 @@ function gameCheck(){
     }
     else;
 }
-//message to start the game
-function gameStart() {
-    alert('You are about to play RPS vs a PC, click ok to start or exit the browser to quit. Best of 5');
-}
+
+
 //riund played, ends when user or pc wins a round
 function round() {
 let playerChoice = prompt("What's your choice?");
@@ -52,20 +47,21 @@ if (computerChoice() === rock && playerChoice === paper) {
 
 console.log(computerChoice());
 }
-//game loop
-function game(){
-gameStart();
-round();
-round();
-round();
-round();
-round();
-gameCheck();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//computer randomly chooses one one the strings
+function computerChoice(){
+    return choices[Math.floor((Math.random() * 3))];
 }
-
-game();
-
-
-
-
-
