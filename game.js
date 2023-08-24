@@ -24,7 +24,6 @@ rockIcon.addEventListener('click', function(){
 
 
 paperIcon.addEventListener('click', function(){ {
-    rockIcon.classList.add('.transformed')
 }
     playerChoice = paper;
     console.log(paperIcon);
@@ -40,16 +39,6 @@ sciIcon.addEventListener('click', function(){
 });
 
 }
-
-
-function enlargeImage(rockIcon) {
-    rockIcon.classList.add('enlarged');
-
-    setTimeout(() => {
-        imageElement.classList.remove('enlarged');
-    }, 250);
-
-    enlargeImage();
 
 
 
