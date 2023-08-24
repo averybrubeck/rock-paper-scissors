@@ -1,5 +1,7 @@
 body {
     text-align: center;
+    background-image: url(/images/paper\ background.avif);
+    background-size: cover;
 }
 
 #gameBoard {
