@@ -13,31 +13,34 @@ let gameCount = document.querySelector('.gameCount');
 let computerChoice = choices[Math.floor((Math.random() * 3))];
 
 playerChoose();
-computerChoose();
+
 
 function playerChoose () {
 rockIcon.addEventListener('click', function(){
         playerChoice = rock;
         console.log(rockIcon);
+        rockIcon.style.transform = "scale(1.2)";
+        rockIcon.style.transition = "transform 0.25 ease";
+        
 });
 
 paperIcon.addEventListener('click', function(){
     playerChoice = paper;
     console.log(paperIcon);
+    paperIcon.style.transform = "scale(1.2)";
+    paperIcon.style.transition = "transform 0.25 ease";
 });
 
 sciIcon.addEventListener('click', function(){
     playerChoice = scissors;
     console.log(sciIcon);
+    sciIcon.style.transform = "scale(1.2)";
+    sciIcon.style.transition = "transform 0.25 ease";
 });
 
 }
 
 
-//computer randomly chooses one one the strings
-function computerChoose(){
-    
-}
 
 
 

@@ -22,11 +22,16 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px;
-    height: 100px;
+   
 }
 
 .scoreBoard {
     display: flex;
     justify-content: space-around;
+}
+
+.rock:hover,
+.paper:hover,
+.scissors:hover {
+    border: 2px solid yellow;
 }
