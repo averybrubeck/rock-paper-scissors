@@ -15,14 +15,13 @@ let computerChoice = choices[Math.floor((Math.random() * 3))];
 playerChoose();
 
 
-function playerChoose () {
+function playerChoose() {
 rockIcon.addEventListener('click', function(){
         playerChoice = rock;
         console.log(rockIcon);    
 });
 
-paperIcon.addEventListener('click', function(){ {
-}
+paperIcon.addEventListener('click', function(){ 
     playerChoice = paper;
     console.log(paperIcon);
     paperIcon.style.transform = "scale(1.2)";
@@ -31,21 +30,12 @@ paperIcon.addEventListener('click', function(){ {
 
 sciIcon.addEventListener('click', function(){
     playerChoice = scissors;
-    console.log(sciIcon);
-    sciIcon.style.transform = "scale(1.2)";
-    sciIcon.style.transition = "transform 0.25 ease";
-});
+    console.log(sciIcon);  
+})
 
-}
+};
 
 
-function enlargeImage(rockIcon) {
-    rockIcon.classList.add('enlarged');
-
-    setTimeout(() => {
-        rockIcon.classList.remove('enlarged');
-    }, 250);
-}
 
 
 
