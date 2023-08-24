@@ -23,3 +23,8 @@ body {
     width: 100px;
     height: 100px;
 }
+
+.scoreBoard {
+    display: flex;
+    justify-content: space-around;
+}
