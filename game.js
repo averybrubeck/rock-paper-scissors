@@ -3,14 +3,21 @@ const rock = 'rock';
 const paper = 'paper';
 const scissors = 'scissors';
 const choices = [rock, paper, scissors];
+
 let playerChoice = null;
+let computerChoice = choices[Math.floor((Math.random() * 3))];
+
 const rockIcon = document.querySelector('.rock');
 const paperIcon = document.querySelector('.paper');
 const sciIcon = document.querySelector('.scissors');
-let  winCount = document.querySelector('.winCount');
-let loseCount = document.querySelector('.loseCount');
-let gameCount = document.querySelector('.gameCount');
-let computerChoice = choices[Math.floor((Math.random() * 3))];
+
+let gameCountIcon = document.querySelector('.gameCount');
+let  winCountIcon = document.querySelector('.winCount');
+let loseCountIcon = document.querySelector('.loseCount');
+
+let winCount = 0;
+let loseCount = 0;
+let gameCount = 0;
 
 playerChoose();
 compareChoices();
