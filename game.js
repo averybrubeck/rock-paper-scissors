@@ -21,8 +21,6 @@ rockIcon.addEventListener('click', function(){
         console.log(rockIcon);    
 });
 
-
-
 paperIcon.addEventListener('click', function(){ {
 }
     playerChoice = paper;
@@ -41,7 +39,13 @@ sciIcon.addEventListener('click', function(){
 }
 
 
+function enlargeImage(rockIcon) {
+    rockIcon.classList.add('enlarged');
 
+    setTimeout(() => {
+        rockIcon.classList.remove('enlarged');
+    }, 250);
+}
 
 
 
