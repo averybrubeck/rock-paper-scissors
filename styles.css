@@ -35,3 +35,7 @@ body {
 .scissors:hover {
     border: 2px solid yellow;
 }
+
+.gameItem.enlarged {
+    transform: scale(1.2); 
+}

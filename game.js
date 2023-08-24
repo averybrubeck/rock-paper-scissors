@@ -18,13 +18,14 @@ playerChoose();
 function playerChoose () {
 rockIcon.addEventListener('click', function(){
         playerChoice = rock;
-        console.log(rockIcon);
-        rockIcon.style.transform = "scale(1.2)";
-        rockIcon.style.transition = "transform 0.25 ease";
-        
+        console.log(rockIcon);    
 });
 
-paperIcon.addEventListener('click', function(){
+
+
+paperIcon.addEventListener('click', function(){ {
+    rockIcon.classList.add('.transformed')
+}
     playerChoice = paper;
     console.log(paperIcon);
     paperIcon.style.transform = "scale(1.2)";
@@ -41,8 +42,14 @@ sciIcon.addEventListener('click', function(){
 }
 
 
+function enlargeImage(rockIcon) {
+    rockIcon.classList.add('enlarged');
 
+    setTimeout(() => {
+        imageElement.classList.remove('enlarged');
+    }, 250);
 
+    enlargeImage();
 
 
 
