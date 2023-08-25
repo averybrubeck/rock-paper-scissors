@@ -21,27 +21,27 @@ let loseCount = 0;
 let gameCount = 0;
 
 
-function playerChoose() {
-    rockIcon.addEventListener('click', function(){
+function playerChoose(){
+    rockIcon.addEventListener('click', function chooseRock() {
             playerChoice = rock;
-            console.log(rockIcon);    
+            processPlayerChoice();
+            
+            console.log(rockIcon);
     });
     paperIcon.addEventListener('click', function(){ 
         playerChoice = paper;
         console.log(paperIcon);
-        paperIcon.style.transform = "scale(1.2)";
-        paperIcon.style.transition = "transform 0.25 ease";
+        processPlayerChoice();
     });
     sciIcon.addEventListener('click', function(){
         playerChoice = scissors;
         console.log(sciIcon);  
+        processPlayerChoice();
     })
-    };
-
-  
-    function compareChoices() {
+};
+function compareChoices(){
         if (playerChoice === computerChoice) {
-            alert('Its a tie!');
+            gameCount++
         } else if (
             (playerChoice === 'rock' && computerChoice === 'scissors') ||
             (playerChoice === 'paper' && computerChoice === 'rock') ||
@@ -53,27 +53,27 @@ function playerChoose() {
         }
         gameCount++;
         console.log('your mothers a whore')
-    };
-
+};
 function updateBoard(){
     winCountIcon.textContent =  winCount;
     loseCountIcon.textContent = loseCount;
     gameCountIcon.textContent = gameCount;
-}
+};
 function resetGame(){
 resetButton.addEventListener('click', function(){
         winCount = 0;
         loseCount = 0;
         gameCount = 0;
+        i = 0;
         updateBoard();
 });
+};
+function processPlayerChoice(){
+    compareChoices();
 }
-function playerInput(){
-    choices.addEventListener('click', playerChoose(), compareChoices(), updateBoard(), resetGame());
-}
-playerInput();
 
 
+playerChoose();
 
 
 
