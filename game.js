@@ -8,45 +8,36 @@ const rockIcon = document.querySelector('.rock');
 const paperIcon = document.querySelector('.paper');
 const sciIcon = document.querySelector('.scissors');
 const resetButton = document.querySelector('.resetButton');
+let computerChoice = getRandomChoice;
 
 let gameCountIcon = document.querySelector('.gameCount');
 let  winCountIcon = document.querySelector('.winCount');
 let loseCountIcon = document.querySelector('.loseCount');
-let playerChoice = null;
 
 let winCount = 0;
 let loseCount = 0;
 let gameCount = 0;
 
 
-function processPlayerChoice(){
-    compareChoices();
-    updateBoard();
-}
-
-function playerChoose(){
+ function playerChoose(){
     rockIcon.addEventListener('click', function() {
             playerChoice = rock;
-            processPlayerChoice();
             console.log(rockIcon);
     });
     paperIcon.addEventListener('click', function(){ 
         playerChoice = paper;
-        console.log(paperIcon);
-        processPlayerChoice();
+        console.log(paperIcon);       
     });
     sciIcon.addEventListener('click', function(){
         playerChoice = scissors;
-        console.log(sciIcon);  
-        processPlayerChoice();
+        console.log(sciIcon);   
     })
 };
-
 function compareChoices(){
         if (playerChoice === computerChoice) {
             gameCount++
         } else if (
-            (playerChoice === rock && computerChoice === scissors) ||
+            (playerChoice === 'rock' && computerChoice === scissors) ||
             (playerChoice === paper && computerChoice === rock) ||
             (playerChoice === scissors && computerChoice === paper)
         ) {
@@ -70,15 +61,9 @@ resetButton.addEventListener('click', function(){
         updateBoard();
 });
 };
+function getRandomChoice() {
+    return choices[Math.floor(Math.random() * choices.length)];
+}
 
-function playGame(round){
-    for(let rounds = 1; rounds <= round; rounds++){
-        playerChoice = null;
-        computerChoice = choices[Math.floor((Math.random() * 3))]; 
-        playerChoose();
-        resetGame();
+playerChoose();
 
-    }
-};
-
-playGame(5);
