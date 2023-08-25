@@ -81,20 +81,17 @@ function playGame(rounds){
             rockIcon.addEventListener('click', function chooseRock() {
                     playerChoice = rock;
                     processPlayerChoice();
-                    updateBoard();
                     console.log(rockIcon);
             });
             paperIcon.addEventListener('click', function(){ 
                 playerChoice = paper;
                 console.log(paperIcon);
                 processPlayerChoice();
-                updateBoard();
             });
             sciIcon.addEventListener('click', function(){
                 playerChoice = scissors;
                 console.log(sciIcon);  
                 processPlayerChoice();
-                updateBoard();
             })
         };
         resetGame();
