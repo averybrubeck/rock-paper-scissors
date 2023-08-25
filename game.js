@@ -19,9 +19,6 @@ let winCount = 0;
 let loseCount = 0;
 let gameCount = 0;
 
-//NEED GET PLAYER CHOICE FUNCTION TO STORE DATA FOR COMPARE FUNCT
-
-
  function playerChoose(){
     rockIcon.addEventListener('click', function() {
             playerChoice = rock;
