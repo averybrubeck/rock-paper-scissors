@@ -19,13 +19,14 @@ let loseCountIcon = document.querySelector('.loseCount');
 let winCount = 0;
 let loseCount = 0;
 let gameCount = 0;
+let round = 0;
+
 
 
 function playerChoose(){
     rockIcon.addEventListener('click', function chooseRock() {
             playerChoice = rock;
             processPlayerChoice();
-            
             console.log(rockIcon);
     });
     paperIcon.addEventListener('click', function(){ 
@@ -70,22 +71,34 @@ resetButton.addEventListener('click', function(){
 };
 function processPlayerChoice(){
     compareChoices();
+    updateBoard();
 }
+function playGame(rounds){
+    for(let rounds = 1; rounds <= round; rounds++){
+        playerChoice = null;
+        let computerChoice = choices[Math.floor((Math.random() * 3))]; 
+        function playerChoose(){
+            rockIcon.addEventListener('click', function chooseRock() {
+                    playerChoice = rock;
+                    processPlayerChoice();
+                    updateBoard();
+                    console.log(rockIcon);
+            });
+            paperIcon.addEventListener('click', function(){ 
+                playerChoice = paper;
+                console.log(paperIcon);
+                processPlayerChoice();
+                updateBoard();
+            });
+            sciIcon.addEventListener('click', function(){
+                playerChoice = scissors;
+                console.log(sciIcon);  
+                processPlayerChoice();
+                updateBoard();
+            })
+        };
+        resetGame();
+    }
+};
 
-
-playerChoose();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+playGame();
