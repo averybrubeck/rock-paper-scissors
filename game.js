@@ -8,6 +8,7 @@ const rockIcon = document.querySelector('.rock');
 const paperIcon = document.querySelector('.paper');
 const sciIcon = document.querySelector('.scissors');
 const resetButton = document.querySelector('.resetButton');
+
 let computerChoice = choices[Math.floor(Math.random() * choices.length)];
 let playerChoice = null;
 
