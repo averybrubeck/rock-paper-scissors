@@ -8,30 +8,44 @@ const rockIcon = document.querySelector('.rock');
 const paperIcon = document.querySelector('.paper');
 const sciIcon = document.querySelector('.scissors');
 const resetButton = document.querySelector('.resetButton');
-let computerChoice = getRandomChoice;
+let computerChoice = choices[Math.floor(Math.random() * choices.length)];
+let playerChoice = null;
 
 let gameCountIcon = document.querySelector('.gameCount');
-let  winCountIcon = document.querySelector('.winCount');
+let winCountIcon = document.querySelector('.winCount');
 let loseCountIcon = document.querySelector('.loseCount');
 
 let winCount = 0;
 let loseCount = 0;
 let gameCount = 0;
 
+//NEED GET PLAYER CHOICE FUNCTION TO STORE DATA FOR COMPARE FUNCT
+
 
  function playerChoose(){
     rockIcon.addEventListener('click', function() {
             playerChoice = rock;
             console.log(rockIcon);
+            compareChoices(playerChoice);
+            updateBoard();
+            resetGame();
     });
     paperIcon.addEventListener('click', function(){ 
         playerChoice = paper;
-        console.log(paperIcon);       
+        console.log(paperIcon);
+        compareChoices(playerChoice);
+        updateBoard();
+        resetGame();
     });
     sciIcon.addEventListener('click', function(){
         playerChoice = scissors;
-        console.log(sciIcon);   
+        console.log(sciIcon);
+        compareChoices(playerChoice)
+        updateBoard()
+        resetGame();   
     })
+
+    return playerChoice;
 };
 function compareChoices(){
         if (playerChoice === computerChoice) {
@@ -62,7 +76,7 @@ resetButton.addEventListener('click', function(){
 });
 };
 function getRandomChoice() {
-    return choices[Math.floor(Math.random() * choices.length)];
+    return 
 }
 
 playerChoose();
