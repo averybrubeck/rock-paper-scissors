@@ -24,6 +24,7 @@ let gameCount = 0;
     rockIcon.addEventListener('click', function() {
             playerChoice = rock;
             console.log(rockIcon);
+            computerChoice = choices[Math.floor(Math.random() * choices.length)];
             compareChoices(playerChoice);
             updateBoard();
             resetGame();
@@ -31,6 +32,7 @@ let gameCount = 0;
     paperIcon.addEventListener('click', function(){ 
         playerChoice = paper;
         console.log(paperIcon);
+        computerChoice = choices[Math.floor(Math.random() * choices.length)];
         compareChoices(playerChoice);
         updateBoard();
         resetGame();
@@ -38,6 +40,7 @@ let gameCount = 0;
     sciIcon.addEventListener('click', function(){
         playerChoice = scissors;
         console.log(sciIcon);
+        computerChoice = choices[Math.floor(Math.random() * choices.length)];
         compareChoices(playerChoice)
         updateBoard()
         resetGame();   
@@ -73,9 +76,4 @@ resetButton.addEventListener('click', function(){
         updateBoard();
 });
 };
-function getRandomChoice() {
-    return 
-}
-
 playerChoose();
-
