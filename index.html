@@ -4,10 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles.css">
-    <script src="/game.js"></script>
+    <script src="/game.js" defer></script>
     <title>RPS</title>
 </head>
 <body>
-    
-</body>
+    <div id="gameConatiner">
+        <div class="header">
+            <h1>Beat The Bot</h1>
+        </div>
+            <div id="gameBoard">
+                <div class="gameItem rock"><img src="/images/rock image.jpg" width="200px"></div>
+                <div class="gameItem paper"><img src="./images/paper image.avif" width="200px"></div>
+                <div class="gameItem scissors"><img src="/images/sci image.jpg" width="200px"></div>
+            </div>
+            
+            <div id="bottomItems">
+                <div class="gameItem gameCount">0</div>
+                <div class="gameItem scoreBoard">
+                    <div class="winCount">0</div>
+                    <div class="loseCount">0</div>       
+            </div>
+        </div>
+        <div class="resetButton">
+            <button>Reset Game</button>
+        </div>
+    </body>
 </html>
