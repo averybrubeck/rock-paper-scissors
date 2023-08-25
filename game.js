@@ -19,65 +19,53 @@ let winCount = 0;
 let loseCount = 0;
 let gameCount = 0;
 
-playerChoose();
-compareChoices();
 
+function round(){
 
-function playerChoose() {
-rockIcon.addEventListener('click', function(){
-        playerChoice = rock;
-        console.log(rockIcon);    
-});
-paperIcon.addEventListener('click', function(){ 
-    playerChoice = paper;
-    console.log(paperIcon);
-    paperIcon.style.transform = "scale(1.2)";
-    paperIcon.style.transition = "transform 0.25 ease";
-});
-sciIcon.addEventListener('click', function(){
-    playerChoice = scissors;
-    console.log(sciIcon);  
-})
-};
+    function playerChoose() {
+        rockIcon.addEventListener('click', function(){
+                playerChoice = rock;
+                console.log(rockIcon);    
+        });
+        paperIcon.addEventListener('click', function(){ 
+            playerChoice = paper;
+            console.log(paperIcon);
+            paperIcon.style.transform = "scale(1.2)";
+            paperIcon.style.transition = "transform 0.25 ease";
+        });
+        sciIcon.addEventListener('click', function(){
+            playerChoice = scissors;
+            console.log(sciIcon);  
+        })
+        };
+        
+        function compareChoices() {
+            if (playerChoice === computerChoice) {
+                alert('Its a tie!');
+            } else if (
+                (playerChoice === 'rock' && computerChoice === 'scissors') ||
+                (playerChoice === 'paper' && computerChoice === 'rock') ||
+                (playerChoice === 'scissors' && computerChoice === 'paper')
+            ) {
+                winCount++;
+            } else {
+                loseCount++;
+            }
+            gameCount++;
+            console.log('your mothers a whore')
+        };
+       function updateBoard(){
+            winCountIcon.textContent =  winCount;
+            loseCountIcon.textContent = loseCount;
+            gameCountIcon.textContent = gameCount;
+       }
 
-
-function compareChoices() {
-    if (playerChoice === computerChoice) {
-        alert('Its a tie!');
-    } else if (
-        (playerChoice === 'rock' && computerChoice === 'scissors') ||
-        (playerChoice === 'paper' && computerChoice === 'rock') ||
-        (playerChoice === 'scissors' && computerChoice === 'paper')
-    ) {
-        winCount++;
-    } else {
-        loseCount++;
-    }
-    gameCount++;
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        playerChoose();
+        compareChoices();
+        updateBoard();
+}
+round();
+round();
 
 
 
